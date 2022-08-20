@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans:wght@200&family=Open+Sans:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: gray;
+  font-family: "Lato", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  background: url("https://source.unsplash.com/random");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+  font-size: 120%;
+}
+
+.main {
+  background: rgba(3, 3, 3, 0.8);
+  padding: 2em;
+  border-radius: 35px;
+  width: 600px;
+  margin: 1em;
+  color: white;
+}
+
+.weather-city .temp {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.weather-city .city {
+  font-size: 46px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  margin: 1em;
+  border-radius: 50%;
+  border: none;
+  height: 40px;
+  width: 40px;
+  outline: none;
+  background: rgb(255 255 255 / 75%);
+  color: black;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+input.search-country {
+  outline: none;
+  border: none;
+  padding: 6px 22px;
+  border-radius: 20px;
+  background: rgba(99, 96, 96, 0.75);
+  color: white;
+  font-family: inherit;
+  font-size: 100%;
+  width: calc(100% - 100px);
+}
+
+button:hover {
+  background: rgba(86, 97, 97, 0.75);
+}
+
+h1.temp {
+  margin: 12px 0;
+  margin-bottom: 25px;
+}
+
+img.icon {
+  margin: 25px 0;
+}
+
+.weather-city .status,
+.humidity,
+.wind-speed {
+  margin: 10px 0;
+}
+
+.status {
+  text-transform: capitalize;
+}
