@@ -1,9 +1,13 @@
 // Setting api key value
-const apikey = "f2d06b7a960941702742599a5fd50c1e";
+const apikey = "97e5e636b95c5765ab5623471587c81b";
 
 const time = document.getElementById("time");
-const am_pm = document.getElementById("am-or-pm");
+const amPm = document.getElementById("am-or-pm");
 const dayElement = document.getElementById("date");
+const tempData = document.getElementById("tempData");
+const humidityData = document.getElementById("humidityData");
+const PressureData = document.getElementById("PressureData");
+const speedData = document.getElementById("speedData");
 
 // Assigning days
 const days = [
@@ -47,12 +51,11 @@ setInterval(() => {
   const month = timeData.getMonth();
 
   // Dom manipulation
+  amPm.innerText = amorpm;
   time.innerText = `${hourIn12HrFormat}:${minuteInDoubleDigit}:${secondInDoubleDigit}`;
-  // am_pm.innerText = `${amorpm}`;
+  time.appendChild(amPm);
   dayElement.innerText = `${days[day]}, ${date} ${months[month]}`;
 }, 1000);
-
-console.log("Hello world");
 
 // API
 
@@ -60,19 +63,24 @@ getWeatherData();
 
 function getWeatherData() {
   navigator.geolocation.getCurrentPosition((success) => {
-    console.log(success);
-    console.log("hehe");
-
     let { latitude, longitude } = success.coords;
 
     fetch(
-      `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${apikey}`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&exclude=hourly,minutely&appid=${apikey}`
     )
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => displayData(data));
   });
 }
 
-function displayData(data) {}
+function displayData(data) {
+  let { temp, humidity, pressure } = data.main;
+  let { speed } = data.wind;
+  let { sunrise, sunset } = data.sys;
 
-console.log("GEo");
+  // Manipulation
+  tempData.innerText = `${temp} °C`;
+  humidityData.innerText = `${humidity} %`;
+  PressureData.innerText = `${pressure} pa`;
+  speedData.innerText = `${speed} km/h`;
+}

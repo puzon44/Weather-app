@@ -12,28 +12,24 @@
     <div class="container">
         <div class="info">
             <div class="date">
-                <div class="time" id="time">12:00 <span id="am-or-pm">PM</span></div>
+                <div class="time" id="time">12:00:00 <span id="am-or-pm">PM</span></div>
                 <div class="day" id="date">Thursday, 18th August</div>
                 <div class="other-items" id="weather-items">
                     <div class="weather-item">
+                        <div>Feels like</div>
+                        <div id="tempData">30</div>
+                    </div>
+                    <div class="weather-item">
                         <div>Humidity</div>
-                        <div>95.7%</div>
+                        <div id="humidityData">95.7%</div>
                     </div>
                     <div class="weather-item">
                         <div>Pressure</div>
-                        <div>215</div>
+                        <div id="PressureData">215</div>
                     </div>
                     <div class="weather-item">
                         <div>Wind speed</div>
-                        <div>152</div>                                        
-                    </div>
-                    <div class="weather-item">
-                        <div>Sunrise</div>
-                        <div>152</div>                                        
-                    </div>
-                    <div class="weather-item">
-                        <div>Sunset</div>
-                        <div>152</div>                                        
+                        <div id="speedData">152</div>                                        
                     </div>
                 </div>
             </div>
@@ -94,7 +90,7 @@
             </div>
         </div>
     </div>
-   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="script.js"></script>
 </body>
 </html>
