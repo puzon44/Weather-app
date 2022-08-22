@@ -48,5 +48,3 @@ searchBar.addEventListener("keyup", (event) => {
     fetchWeather(searchBar.value);
   }
 });
-
-console.log('Hehe');
