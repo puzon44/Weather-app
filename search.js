@@ -37,7 +37,7 @@ function fetchWeather(city) {
     .catch(() => alert("No Data found" + " 404"));
 }
 
-// code for serach button
+// codes for serach button
 
 searchButton.addEventListener("click", () => {
   fetchWeather(searchBar.value);

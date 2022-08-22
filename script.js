@@ -48,7 +48,7 @@ setInterval(() => {
 
   // Dom manipulation
   time.innerText = `${hourIn12HrFormat}:${minuteInDoubleDigit}:${secondInDoubleDigit}`;
-  am_pm.innerHTML = `${amorpm}`;
+  // am_pm.innerText = `${amorpm}`;
   dayElement.innerText = `${days[day]}, ${date} ${months[month]}`;
 }, 1000);
 
@@ -73,10 +73,6 @@ function getWeatherData() {
   });
 }
 
-
-function displayData(data){
-
-}
-
+function displayData(data) {}
 
 console.log("GEo");
